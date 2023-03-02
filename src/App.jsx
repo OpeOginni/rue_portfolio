@@ -68,7 +68,7 @@ function App() {
               </Button>
             </ButtonGroup>
           </Box>
-          <Image p={5} src="../public/face_pic.png" />
+          <Image p={5} src="/face_pic.png" />
           <Box></Box>
         </SimpleGrid>
       </Box>
