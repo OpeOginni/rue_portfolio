@@ -7,9 +7,37 @@ import {
   Image,
   ButtonGroup,
   Button,
+  Center,
 } from "@chakra-ui/react";
 
 import { MdOutlineDownload } from "react-icons/md";
+
+const services = [
+  {
+    name: "Project Management",
+    descritpion:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maecenas urna consequat tempus amet. Vitae eu aliquam aliquet varius bibendum vitae dignissim. Facilisis commodo laoreet pellentesque ut metus. Nisl, sem neque cursus sed. Ac aenean risus pellentesque in enim sollicitudin. Cras lacinia tortor tortor proin pellentesque sem velit pulvinar.",
+    key: 1,
+  },
+  {
+    name: "Product Design",
+    descritpion:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maecenas urna consequat tempus amet. Vitae eu aliquam aliquet varius bibendum vitae dignissim. Facilisis commodo laoreet pellentesque ut metus. Nisl, sem neque cursus sed. Ac aenean risus pellentesque in enim sollicitudin. Cras lacinia tortor tortor proin pellentesque sem velit pulvinar.",
+    key: 2,
+  },
+  {
+    name: "Data Analyst",
+    descritpion:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maecenas urna consequat tempus amet. Vitae eu aliquam aliquet varius bibendum vitae dignissim. Facilisis commodo laoreet pellentesque ut metus. Nisl, sem neque cursus sed. Ac aenean risus pellentesque in enim sollicitudin. Cras lacinia tortor tortor proin pellentesque sem velit pulvinar.",
+    key: 3,
+  },
+  {
+    name: "Web Development",
+    descritpion:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maecenas urna consequat tempus amet. Vitae eu aliquam aliquet varius bibendum vitae dignissim. Facilisis commodo laoreet pellentesque ut metus. Nisl, sem neque cursus sed. Ac aenean risus pellentesque in enim sollicitudin. Cras lacinia tortor tortor proin pellentesque sem velit pulvinar.",
+    key: 4,
+  },
+];
 
 function App() {
   return (
@@ -24,8 +52,8 @@ function App() {
         RUEBITS
       </Text>
 
-      <Box id="about" paddingY={{ md: 20, base: 10 }}>
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={15}>
+      <Box id="about" paddingTop={{ md: 20, base: 10 }}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={30}>
           <Box display="flex" flexDirection="column">
             <Text
               color="white"
@@ -68,9 +96,106 @@ function App() {
               </Button>
             </ButtonGroup>
           </Box>
-          <Image p={5} src="/face_pic.png" />
-          <Box></Box>
+          <Box>
+            <Image p={5} src="/face_pic.png" />
+          </Box>
         </SimpleGrid>
+      </Box>
+      <Box id="services" paddingY="3.5">
+        <Box display="flex" flexDirection="column">
+          <Text
+            color="white"
+            fontSize={{ base: "3xl", md: "4xl" }}
+            as="b"
+            paddingLeft={{ md: 10, base: 3 }}
+            paddingY={{ lg: 3, base: 2 }}
+          >
+            Services
+          </Text>
+          <Text
+            color="white"
+            fontSize={{ md: "md", base: "md" }}
+            as="b"
+            paddingLeft={{ md: 10, base: 3 }}
+            paddingBottom={{ md: 7, base: 3 }}
+          >
+            What I do
+          </Text>
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={30}>
+            {services.map((service) => (
+              <Box
+                key={service.key}
+                borderColor="#2C84A0"
+                borderWidth="medium"
+                className="border aspect-[3/2] bg-gradient-to-b from-projectBlue to-projectDarkGray"
+                display="flex"
+                flexDirection="column"
+              >
+                <Text
+                  color="white"
+                  fontSize={{ base: "lg", xl: "lg" }}
+                  textAlign="left"
+                  as="b"
+                  p="2"
+                >
+                  {service.name}
+                </Text>
+
+                <Text color="white" fontSize={{ base: "sm", md: "md" }} p="3">
+                  {service.descritpion}
+                </Text>
+              </Box>
+            ))}
+          </SimpleGrid>
+        </Box>
+      </Box>
+      <Box id="framework" paddingY="3.5">
+        <Box display="flex" flexDirection="column">
+          <Text
+            color="white"
+            fontSize={{ base: "3xl", md: "4xl" }}
+            as="b"
+            paddingLeft={{ md: 10, base: 3 }}
+            paddingY={{ lg: 3, base: 2 }}
+          >
+            Framework
+          </Text>
+          <Text
+            color="white"
+            fontSize={{ md: "md", base: "md" }}
+            as="b"
+            paddingLeft={{ md: 10, base: 3 }}
+            paddingBottom={{ md: 7, base: 3 }}
+          >
+            My work process
+          </Text>
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={30}>
+            {services.map((service) => (
+              <Box
+                key={service.key}
+                borderColor="#2C84A0"
+                borderWidth="medium"
+                className="border aspect-[3/2] bg-gradient-to-b from-projectBlue to-projectDarkGray"
+                display="flex"
+                flexDirection="column"
+              >
+                <Text
+                  color="white"
+                  fontSize={{ base: "lg", xl: "lg" }}
+                  textAlign="left"
+                  as="b"
+                  p="2"
+                >
+                  {service.name}
+                </Text>
+
+                <Text color="white" fontSize={{ base: "sm", md: "md" }} p="3">
+                  {service.descritpion}
+                </Text>
+              </Box>
+            ))}
+          </SimpleGrid>
+        </Box>
       </Box>
     </Box>
   );
