@@ -39,6 +39,15 @@ const services = [
   },
 ];
 
+const projects = [
+  { key: 1, src: "./project_0.png" },
+  { key: 2, src: "./project_1.png" },
+  { key: 3, src: "./project_2.png" },
+  { key: 4, src: "./project_3.png" },
+  { key: 5, src: "./project_4.png" },
+  { key: 6, src: "./project_5.png" },
+];
+
 function App() {
   return (
     <Box id="name" bgColor="#100407">
@@ -149,7 +158,7 @@ function App() {
           </SimpleGrid>
         </Box>
       </Box>
-      <Box id="framework" paddingY="3.5">
+      {/* <Box id="framework" paddingY="3.5">
         <Box display="flex" flexDirection="column">
           <Text
             color="white"
@@ -195,6 +204,97 @@ function App() {
               </Box>
             ))}
           </SimpleGrid>
+        </Box> 
+      </Box>*/}
+      <Box id="project" paddingY="3.5">
+        <Box display="flex" flexDirection="column">
+          <Text
+            color="white"
+            fontSize={{ base: "3xl", md: "4xl" }}
+            as="b"
+            paddingLeft={{ md: 10, base: 3 }}
+            paddingY={{ lg: 3, base: 2 }}
+          >
+            Projects
+          </Text>
+          <Text
+            color="white"
+            fontSize={{ md: "md", base: "md" }}
+            as="b"
+            paddingLeft={{ md: 10, base: 3 }}
+            paddingBottom={{ md: 7, base: 3 }}
+          >
+            My Portfolio
+          </Text>
+          <Center>
+            <SimpleGrid columns={{ base: 1, md: 1, lg: 3 }} spacing={30}>
+              {projects.map((project) => (
+                <Box key={project.key}>
+                  <Image p={5} src={project.src} height={"2xl"} />
+                </Box>
+              ))}
+            </SimpleGrid>
+          </Center>
+        </Box>
+      </Box>
+      <Box id="contact" paddingY="3.5">
+        <Box display="flex" flexDirection="column" paddingBottom="14">
+          <Text
+            color="white"
+            fontSize={{ base: "3xl", md: "4xl" }}
+            as="b"
+            paddingLeft={{ md: 10, base: 3 }}
+            paddingY={{ lg: 3, base: 2 }}
+            textAlign={"center"}
+          >
+            Contact Me
+          </Text>
+          <Text
+            color="white"
+            fontSize="10px"
+            paddingLeft={{ md: 10, base: 3 }}
+            paddingBottom={{ md: 7, base: 3 }}
+            textAlign={"center"}
+          >
+            Available to work on your projects and bring your imagination to
+            life. Just a message away
+          </Text>
+        </Box>
+
+        <Box display="flex" flexDirection="column">
+          <Text
+            color="white"
+            fontSize="10px"
+            paddingLeft={{ md: 10, base: 3 }}
+            paddingBottom={{ md: 7, base: 3 }}
+            as={"b"}
+            textAlign={"center"}
+            p={"5"}
+          >
+            +2348064440741
+          </Text>
+          <Text
+            color="white"
+            fontSize="10px"
+            paddingLeft={{ md: 10, base: 3 }}
+            paddingBottom={{ md: 7, base: 3 }}
+            as={"b"}
+            textAlign={"center"}
+            p={"5"}
+          >
+            bukkyakin@icloud.com
+          </Text>
+          <Text
+            color="white"
+            fontSize="10px"
+            paddingLeft={{ md: 10, base: 3 }}
+            paddingBottom={{ md: 7, base: 3 }}
+            as={"b"}
+            textAlign={"center"}
+            p={"5"}
+          >
+            Remote
+          </Text>
         </Box>
       </Box>
     </Box>
